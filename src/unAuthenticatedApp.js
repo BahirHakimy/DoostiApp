@@ -22,7 +22,7 @@ function UnAuthenticated() {
       >
         <Navbar isAuth={false} />
         {!user && (
-          <img src="assets/logo512.png" width="512px" height="512px" alt="logo" />
+          <img alt="logo" src={'../Logo512.png'} width="512px" height="512px"  />
         )}
 
         <Routes>
