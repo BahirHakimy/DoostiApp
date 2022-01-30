@@ -37,7 +37,7 @@ function UnAuthenticated() {
               )
             }
           />
-          <Route path="/" element={<Navigate to="/login"  />}  />
+          <Route path="*" element={<Navigate to="/login"  />}  />
         </Routes>
       </div>
     </div>
