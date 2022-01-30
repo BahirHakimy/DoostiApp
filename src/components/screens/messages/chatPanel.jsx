@@ -42,7 +42,7 @@ const ChatPanel = ({
     sendMessage,
     onMessage,
     status: socketState,
-  } = useSocket("wss://dostiapi.herokuapp.com/ws/chat/");
+  } = useSocket(process.env.REACT_APP_WEBSOCKET_URL);
 
   // Retrieving the messages from the server via http request
   React.useEffect(() => {
