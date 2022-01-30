@@ -15,7 +15,7 @@ axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
-  timeout: 5000,
+  timeout: 60000,
   headers: {
     Authorization: "Bearer " + getTokens().access,
     "Content-Type": "application/json",
