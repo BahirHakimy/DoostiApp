@@ -1,0 +1,307 @@
+#parentContainer {
+  display: grid;
+  grid-template-columns: 20rem auto;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 0;
+}
+#leftContainer {
+  background: var(--gradient);
+  box-shadow: 0.4rem 0.4rem 0.9rem var(--gray-dark);
+  z-index: 100;
+}
+#searchFormContainer {
+  border-bottom: 2px groove #ccc;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+.icon {
+  color: white;
+  transform: translateX(1.5rem);
+  height: 20px;
+  width: 20px;
+}
+
+#searchFormLabel {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.45rem;
+  color: white;
+  height: 20px;
+  width: 20px;
+}
+#submitArrow {
+  height: 20px;
+  width: 20px;
+  color: white;
+  position: absolute;
+  right: 0.4rem;
+  top: 0.4rem;
+  cursor: pointer;
+}
+#mySideList {
+  padding: 0;
+  margin: 0;
+}
+.friendListContainer {
+  border: 1px solid white;
+  border-radius: 2rem;
+  margin: 0.1rem;
+  cursor: pointer;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  font-size: larger;
+  box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem #ccc;
+  margin-top: 1rem;
+}
+.button2 {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-weight: 550;
+  background: linear-gradient(45deg, #03a9f4, #4f9d72);
+  border: none;
+  font-size: larger;
+  box-shadow: 0.1rem 0.1rem 0.3rem 0.1rem var(--gray-dark);
+  margin-bottom: 1rem;
+}
+.button2:hover,
+.button:hover {
+  box-shadow: 0.1rem 0.1rem 0.3rem 0.2rem;
+}
+.name {
+  color: white;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgb(26, 22, 22);
+  transform: translateY(-15px);
+  padding: 1rem 5rem;
+  border-radius: 1rem;
+  width: max-content;
+  margin: auto;
+  background-color: #5553;
+}
+
+#rightFriendDisplayContainer {
+  background: var(--gradient-light);
+  z-index: -100;
+  overflow: hidden;
+}
+.profileImageContainer {
+  position: relative;
+  height: 20rem;
+  overflow-y: hidden;
+  border-radius: 2rem;
+}
+#coverPhoto {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  box-shadow: 0.3rem 0.3rem 0.9rem 0.2rem #999;
+  z-index: -100;
+  transform: translateY(-5rem);
+}
+
+#closeButton {
+  position: absolute;
+  right: 2.5rem;
+  top: 1.5rem;
+  color: rgb(255, 255, 255);
+  border: 1px solid #fff;
+  box-shadow: 0.1rem 0.1rem 0.4rem 0.1rem #999;
+  border-radius: 50%;
+  width: 2.5rem;
+  background: rgba(44, 44, 44, 0.5);
+  height: 2.5rem;
+  z-index: 300;
+}
+#closeButton:hover {
+  font-weight: bold;
+  box-shadow: 0.2rem 0.2rem 0.4rem 0.1rem #999;
+}
+
+#friendProfileScreenContainer {
+  display: grid;
+  grid-template-rows: 20rem auto;
+}
+/* Friends Display Screen */
+
+#friendDisplayScreen {
+  max-height: 100vh;
+}
+
+.friendsDisplayContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  height: 85vh;
+  margin: auto;
+  width: 90%;
+}
+
+/* End Friends Display Screen */
+
+/* Right Togglable Nav */
+.sideNav {
+  background: #3c8f7c;
+  height: 8rem;
+  width: 2.5rem;
+  transform: translateY(15rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  box-shadow: -0.1rem -0.1rem 0.4rem var(--gray-dark);
+  z-index: 500;
+}
+#togglableSection {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: -21rem;
+  transition: all 0.5s;
+}
+.sideNavContainer {
+  background: var(--gradient);
+  padding: 0 0.5rem;
+  width: 20rem;
+  height: 100vh;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  box-shadow: -0.1rem -0.1rem 0.4rem 0.1rem var(--gray-dark);
+  z-index: 300;
+  position: relative;
+  overflow: hidden;
+}
+.navIcon {
+  color: white;
+  height: 25px;
+  width: 25px;
+  padding: 0.4rem;
+}
+.iconActive {
+  background: #2cf3d085;
+}
+
+.navIcon:hover {
+  background-color: #fff3;
+  border-radius: 40%;
+}
+.iconSet {
+  position: relative;
+}
+.tag {
+  position: absolute;
+  left: 1.5rem;
+  font-size: 3.5rem;
+  bottom: 0.2rem;
+  color: #ffd734;
+  cursor: default;
+  user-select: none;
+}
+
+.notificationListItem {
+  display: flex;
+  align-items: center;
+  box-shadow: 0.1rem 0.1rem 0.3rem #ccc;
+  padding: 0.3rem 0;
+  margin: 0.4rem 0;
+}
+.notificationIcon {
+  height: 40px;
+  width: 40px;
+  color: white;
+}
+.notificationText {
+  font-family: cursive;
+  color: wheat;
+  text-align: center;
+}
+
+#requestsList {
+  padding: 0 1rem;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 95vh;
+}
+
+.requestsListTitle {
+  list-style-type: none;
+  color: white;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-shadow: 0.2rem 0.2rem 0.2rem #333;
+}
+
+.requestListItem {
+  list-style-type: none;
+  color: white;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  margin: 0.1rem 0;
+}
+
+.requestListItemBio {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.requestListItemName {
+  margin-left: 1rem;
+  font-weight: light;
+  position: relative;
+}
+
+.requestListItemCaption {
+  position: absolute;
+  top: 1.4rem;
+  left: 0;
+  margin: 0;
+  color: #ccc;
+  width: 10rem;
+  text-align: left;
+  font-family: monospace;
+}
+/* End Right Togglable Nav */
+
+#hiddenSubmit {
+  display: none;
+}
+
+.title {
+  color: var(--dark);
+  text-shadow: 0.1rem 0.1rem 0.1rem #fff;
+}
+.title-forlight {
+  color: var(--dark);
+  text-shadow: 0.1rem 0.1rem 0.1rem #fff;
+}
+.title-fordark {
+  color: var(--light);
+  text-shadow: 0.1rem 0.1rem 0.1rem var(--dark);
+}
+
+.error {
+  color: red;
+  font-size: medium;
+  font-family: "Courier New", Courier, monospace;
+  word-spacing: 0.2rem;
+  line-height: 1rem;
+  margin: auto;
+  list-style-type: none;
+  text-align: center;
+}

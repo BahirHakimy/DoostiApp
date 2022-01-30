@@ -1,0 +1,49 @@
+#mainPageContainer {
+  display: grid;
+  grid-template-columns: 3.5rem auto;
+  height: 100vh;
+}
+#messagePageContainer {
+  display: grid;
+  grid-template-columns: 20rem auto;
+  height: 100vh;
+  overflow: hidden;
+}
+#sideList {
+  max-height: 100vh;
+  display: grid;
+  grid-template-rows: 45% 55%;
+  z-index: 200;
+}
+.theme-sidelistdark {
+  background: var(--gradient-darkIndiago);
+  box-shadow: 0.4rem 0.4rem 0.9rem var(--lightIndiago);
+}
+.theme-sidelistlight {
+  background: var(--gradient);
+  box-shadow: 0.4rem 0.4rem 0.9rem var(--gray-dark);
+}
+ul#favorites {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 10px;
+}
+ul#recent {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 10px;
+  min-height: 22rem;
+  max-height: 22rem;
+}
+div#chatsContainer {
+  max-height: 17rem;
+  overflow-y: scroll;
+}
+.main-theme-dark {
+  background: var(--gradient-dark);
+}
+.main-theme-light {
+  background: whitesmoke;
+}

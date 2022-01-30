@@ -1,0 +1,205 @@
+#settingsSideList {
+  margin: 0;
+  list-style-type: none;
+  text-align: left;
+  border-radius: 0 0.5rem 0.5rem 0;
+  box-shadow: 0.1rem 0.1rem 0.3rem var(--gray);
+}
+#passwordChangeForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  animation: fade 0.5s linear;
+}
+.form-light {
+  background: var(--gradient-light);
+}
+.form-dark {
+  background: var(--gradient-darkPrimary);
+}
+#passFormCaption-light {
+  margin: 1rem 0;
+  font-weight: 600;
+}
+#passFormCaption-dark {
+  margin: 1rem 0;
+  color: var(--light);
+  font-weight: 600;
+}
+
+#passFormError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  width: 12rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 0 0 0;
+  margin: 0.5rem 0;
+}
+.error-light {
+  color: var(--orange);
+  text-shadow: 0.1rem 0.1rem 0.2rem var(--light);
+}
+.error-dark {
+  color: var(--warning);
+  text-shadow: 0.1rem 0.1rem 0.2rem var(--dark);
+}
+#spinnerContainer {
+  height: 2rem;
+  width: 5rem;
+  padding: 0 0.5rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#passFormButtonGroup {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  width: auto;
+}
+
+.settingInputGroup {
+  position: relative;
+}
+.visibalityToggle {
+  position: absolute;
+  padding: 0.7rem 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+}
+.visibalityToggle:active {
+  fill: var(--teal);
+}
+.passFormInput {
+  padding: 0.5rem 1rem;
+  margin: 0.2rem 0;
+  border-radius: 0.3rem;
+  border: none;
+}
+.settingParentContainer {
+  display: grid;
+  grid-template-columns: 20rem auto;
+}
+.theme-light {
+  background: var(--light);
+}
+.theme-dark {
+  background: var(--dark);
+}
+.sideList-dark {
+  background: var(--gradient-darkIndiago);
+}
+.sideList-light {
+  background: var(--gradient);
+}
+.listItem {
+  margin-bottom: 0.2rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: default;
+  user-select: none;
+}
+.listItem:hover {
+  font-weight: 600;
+}
+.listItem:active {
+  box-shadow: inset 0.1rem 0.1rem 0.2rem var(--dark);
+}
+.list-light {
+  background: var(--light);
+  color: var(--dark);
+}
+.list-dark {
+  background: var(--gray);
+  color: var(--light);
+}
+.list-active {
+  background: var(--primary);
+  color: var(--light);
+}
+.settings-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--light);
+}
+.header-light {
+  background: var(--success);
+}
+.header-dark {
+  background: var(--gradient-darkPrimary);
+}
+.settings-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0.1rem 0.1rem 0.3rem var(--dark);
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.group-light {
+  background: var(--success);
+}
+.group-dark {
+  background: var(--gray);
+}
+.setting-title {
+  color: var(--light);
+  padding: 0.5rem;
+}
+.setting-caption {
+  color: var(--light);
+  font-weight: lighter;
+}
+.aboutPage-dark {
+  margin: auto;
+  background: var(--gradient-darkPrimary);
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  width: fit-content;
+}
+.aboutPage-light {
+  margin: auto;
+  background: var(--gradient-light);
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  width: fit-content;
+}
+#logoAndName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#appName {
+  font-weight: 600;
+  text-shadow: 0.1rem 0.1rem 0.1rem var(--gray);
+  color: #970043;
+  padding-left: 0.6rem;
+  margin: 0;
+}
+.contactLinkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: var(--light);
+  margin: 0 0.3rem;
+}
+.contactLinkContainer:hover {
+  background: #aaa;
+}

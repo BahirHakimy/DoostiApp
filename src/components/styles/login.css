@@ -1,0 +1,8 @@
+#roundBackground {
+  background-color: white;
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+  width: 50%;
+  height: 100vh;
+  box-shadow: 0.2rem 0.2rem 0.4rem #fff;
+}

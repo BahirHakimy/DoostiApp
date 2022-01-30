@@ -1,0 +1,138 @@
+#roomsParentContainer {
+  position: relative;
+  padding: 0.2rem 1rem;
+}
+#roomsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.5rem;
+}
+.roomsHeader-light {
+  background: var(--green);
+}
+.roomsHeader-dark {
+  background: var(--lightIndiago);
+}
+#roomsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 30rem;
+  overflow-y: scroll;
+}
+#roomsCloseButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1118;
+  top: 5rem;
+  right: 1.5rem;
+  color: var(--light);
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.2rem var(--dark);
+}
+#roomsCloseButton:hover {
+  background: #2226;
+}
+#roomsCloseButton:active {
+  box-shadow: inset 0.1rem 0.1rem 0.2rem var(--dark);
+}
+#roomCreateForm {
+  height: 15rem;
+  width: 20rem;
+  display: grid;
+  grid-template-rows: 4rem 3rem 3rem 3rem;
+  grid-template-columns: auto;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.1rem 0.1rem 0.3rem var(--dark);
+  border-radius: 0.5rem;
+}
+.roomForm-light {
+  background: var(--success);
+}
+.roomForm-dark {
+  background: var(--lightIndiago);
+}
+#formHeader {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--light);
+  padding: 0.5rem 0;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+#roomNameInput {
+  border: 1px solid var(--gray);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+#roomFormButtons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.roomCard {
+  width: 8rem;
+  height: 13rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.roomCard-light {
+  box-shadow: 0.1rem 0.1rem 0.3rem var(--success);
+}
+.roomCard-dark {
+  box-shadow: 0.1rem 0.1rem 0.3rem var(--lightIndiago);
+}
+.roomCard:hover {
+  background: #7774;
+}
+.roomCard:active {
+  box-shadow: inset 0.1rem 0.1rem 0.3rem var(--success);
+}
+.roomIcon-light {
+  height: 4rem;
+  color: var(--light);
+  background: var(--success);
+  border-radius: 0.5rem;
+}
+.roomIcon-dark {
+  height: 4rem;
+  color: var(--light);
+  background: var(--lightIndiago);
+  border-radius: 0.5rem;
+}
+.roomName {
+  overflow: hidden;
+  height: 3rem;
+  width: 8rem;
+  cursor: default;
+  user-select: none;
+}
+.roomMemebersCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1rem;
+  padding: 0.2rem 0;
+  width: 8rem;
+  color: var(--light);
+  cursor: default;
+}
+.members-light {
+  background: var(--success);
+}
+.members-dark {
+  background: var(--lightIndiago);
+}

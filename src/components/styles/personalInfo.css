@@ -1,0 +1,119 @@
+#adInfoBackground {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#adInfoMainContainer {
+  padding-top: 1rem;
+  background: #023f6eb3;
+  height: 85vh;
+  width: 80%;
+  border-radius: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem #000;
+}
+
+#firstScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+}
+#adInfoAvatar {
+  border-radius: 50%;
+  border: 4px solid #3337;
+}
+
+#secondScreen {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.avatarCaption {
+  color: #fff;
+  text-shadow: 0.1rem 0.1rem 0.3rem #333;
+}
+
+.pInfoInputGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5rem;
+  margin: 0.7rem 0;
+  position: relative;
+}
+
+.pInfoInputSet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 20rem;
+  background-color: transparent;
+  border-bottom: 0.1rem solid #aaa;
+  padding: 0.4rem 0;
+}
+.pInfoInputSet label {
+  color: var(--light);
+}
+.pInfoSelect {
+  background: transparent;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.4rem;
+  color: var(--light);
+  border: 1px solid #aaa;
+}
+.pInfoSelect option {
+  color: var(--dark);
+}
+.pInfoInput {
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  color: var(--light);
+  background: transparent;
+  padding: 0.2rem 1rem;
+  box-shadow: 0.1rem 0.1rem 0.2rem #a9a;
+  border-radius: 0.1rem;
+}
+.pInfoInput::placeholder {
+  color: var(--light);
+}
+.inputCaption {
+  color: #fff;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgb(17, 17, 22);
+}
+.pInfoButtonsGroup {
+  position: absolute;
+  bottom: -4rem;
+  right: 4rem;
+  width: 25rem;
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+#skipButton {
+  position: absolute;
+  top: -3.5rem;
+  right: 1rem;
+  width: max-content;
+  background: transparent;
+  text-decoration: underline;
+  color: var(--light);
+  box-shadow: none;
+  font-weight: 500;
+}
+#skipButton:hover {
+  color: var(--primary);
+  font-weight: 600;
+}
+.title-white {
+  color: #eee;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgb(0, 0, 0);
+}

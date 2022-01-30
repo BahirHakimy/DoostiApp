@@ -1,0 +1,351 @@
+#profilePageContainer {
+  background: white;
+  z-index: 0;
+  display: grid;
+  grid-template-rows: 20rem auto;
+}
+#profileCPContainer {
+  position: relative;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 0;
+}
+#profileCoverPhoto {
+  height: auto;
+  background-size: contain;
+  width: 100%;
+  transform: translateY(8rem);
+  z-index: 0;
+}
+
+#profileInfoContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  background: var(--light);
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+#simpleSnippet {
+  position: absolute;
+  background: var(--light);
+  height: 25rem;
+  width: 17rem;
+  top: -17rem;
+  left: 4rem;
+  border-top-left-radius: 10rem;
+  border-top-right-radius: 10rem;
+  z-index: 100;
+}
+#profileImageContainer {
+  border-radius: 10rem;
+  position: relative;
+  overflow: hidden;
+}
+#buttonsContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 5rem;
+  align-items: center;
+  top: 5.5rem;
+  left: 5.7rem;
+  z-index: 1000;
+}
+#previewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--gradient-light);
+}
+#imagePreview {
+  max-width: 1200px;
+  max-height: 700px;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.3rem var(--dark);
+}
+
+.topSlider,
+.bottomSlider {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: #7054544a;
+  transition: all 0.5s;
+}
+.topSlider {
+  top: -50%;
+  border-top-right-radius: 10rem;
+  border-top-left-radius: 10rem;
+}
+.bottomSlider {
+  bottom: -50%;
+  border-bottom-right-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+}
+.fadeButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: 0.1rem 0.1rem 0.5rem #222;
+  color: var(--info);
+  background: #fff;
+  border-radius: 0.5rem;
+  z-index: 1000;
+  animation: warning 0.5s 1 linear;
+}
+.fadeButton:hover {
+  font-weight: 700;
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--dark);
+}
+.fadeButton:active {
+  box-shadow: inset 0.1rem 0.1rem 0.3rem var(--dark);
+}
+.bottomDark {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.top {
+  top: 0;
+}
+.bottom {
+  bottom: 0;
+}
+.blur {
+  filter: blur(2px);
+}
+#initialInfo {
+  position: relative;
+}
+#editButton {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--info);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  border-radius: 0.4rem;
+  transition: background 0.3s;
+}
+.editPart {
+  cursor: pointer;
+  color: var(--info);
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  transition: background 0.3s;
+}
+.editPart:hover,
+#editButton:hover {
+  background: #3333;
+}
+#additionalInfo {
+  background: whitesmoke;
+  display: grid;
+  grid-template-columns: 40% 40% auto;
+  z-index: 100;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+.infoSet {
+  width: 20rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.infoPart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.infoCaption {
+  padding-right: 0.5rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+.infoContent {
+  padding-left: 0.5rem;
+}
+.initialInfoForm {
+  position: absolute;
+  animation: fade 0.5s 1 ease-in;
+  top: -4.5rem;
+  left: 0;
+}
+.editForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: fade 0.5s 1 ease-in;
+}
+.editFormContainer {
+  position: inherit;
+  top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.3rem;
+  background: #3336;
+  width: 20rem;
+  height: 14rem;
+}
+.smallWidthTall {
+  width: 17rem;
+  height: 20rem;
+}
+.editFormTitle {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: light;
+  margin: 0;
+}
+.initialInfoFormTitle {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: light;
+}
+.editFormClose {
+  position: inherit;
+  right: 1rem;
+  top: 1rem;
+  background: transparent;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border: none;
+}
+
+.editFormClose:hover {
+  color: var(--red);
+}
+.editFormInput {
+  font-size: 1rem;
+  background: #fffa;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+.smallInput {
+  width: 10rem;
+}
+.editFormSelect {
+  background: #fffa;
+  color: var(--dark);
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+.smallSelect {
+  padding: 0.4rem 0.2rem;
+  margin-bottom: 0;
+  width: 7rem;
+}
+#editFormSelectGroup {
+  position: relative;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#locationIcon {
+  position: absolute;
+  color: white;
+  left: -1.3rem;
+}
+
+.editFormButton1 {
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  background: var(--info);
+  margin: 0 0.5rem 1rem 0;
+}
+.editFormButton2 {
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  background: var(--red);
+  margin: 0 0 1rem 0.5rem;
+}
+.customMargin {
+  margin: 0.5rem 0.5rem 0.8rem 0.5rem;
+}
+.editFormWarning {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--warning);
+  text-shadow: 0.1rem 0.1rem 0.2rem black;
+  animation: warning 0.5s 1 ease-in;
+}
+
+.hover:hover {
+  box-shadow: 0.1rem 0.1rem 0.3rem #fff;
+}
+
+.textLight {
+  color: var(--light);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+    transform: scale(30%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+@keyframes warning {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 85%;
+  }
+
+  .smallSelect {
+    padding: 0.4rem 0;
+  }
+}
+@media only screen and (max-width: 1024) {
+  html {
+    font-size: 75%;
+  }
+  #editFormSelectGroup {
+    width: 85%;
+  }
+  .smallSelect {
+    width: fit-content;
+    padding: 0.4rem 0;
+  }
+}

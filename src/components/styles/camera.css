@@ -1,0 +1,61 @@
+#parentFullContainer {
+  background: transparent;
+  width: 100%;
+  height: auto;
+}
+#cameraContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  height: 85vh;
+  width: 80%;
+  border-radius: 2rem;
+  box-shadow: -0.2rem -0.2rem 0.5rem rgb(255, 255, 255);
+  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  margin: auto;
+}
+#cameraWrapper {
+  position: relative;
+  width: fit-content;
+  height: auto;
+}
+#camera {
+  width: 700px;
+  max-height: 90vh;
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0.1rem 0.3rem #112;
+}
+#cameraShotButton {
+  position: absolute;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  background: #3338;
+  bottom: 1.5rem;
+  right: 45%;
+  color: var(--light);
+  border-radius: 0.5rem;
+}
+#cameraCloseButton {
+  position: absolute;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  background: #3338;
+  top: 2rem;
+  right: 2rem;
+  color: var(--light);
+  border-radius: 0.5rem;
+}
+#cameraShotButton:hover {
+  background: #2228;
+  box-shadow: 0.1rem 0.1rem 0.3rem #fff;
+  color: var(--green);
+}
+#cameraCloseButton:hover {
+  box-shadow: 0.1rem 0.1rem 0.3rem #fff;
+  color: var(--red);
+}
+#cameraShotButton:active,
+#cameraCloseButton:active {
+  box-shadow: inset 0.1rem 0.1rem 0.3rem rgb(172, 144, 144);
+}
