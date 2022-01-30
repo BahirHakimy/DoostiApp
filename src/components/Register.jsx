@@ -97,6 +97,7 @@ const Register = ({ nextPage }) => {
       }
     } catch (error) {
       setPending(false);
+      toast.error(error?.response?.data?.message || error?.message || 'Something went wrong please retry')
       return Promise.reject(error);
     }
   }
