@@ -41,7 +41,6 @@ const PersonalInfo = ({ user: { username, password, gender } }) => {
     shot,
     selectedCountry,
   } = state;
-
   const stracture = [
     {
       name: "country",
@@ -137,7 +136,6 @@ const PersonalInfo = ({ user: { username, password, gender } }) => {
       for (let er of error.details) {
         errors[er.path[0]] = er.message;
       }
-      console.log(error);
       dispatch({ errors, animate: false, pending: false });
     } else {
       dispatch({ errors: {}, animate: false });
@@ -154,9 +152,12 @@ const PersonalInfo = ({ user: { username, password, gender } }) => {
           continueLogin();
         },
         (error) => {
+          if (!error?.response){
+            toast.error("Please check your internet connection")
+          }else{
+            toast.error(error?.message || 'Some thing went wrong');
+          }
           dispatch({ pending: false });
-          toast.error("Something went wrong please refer to console");
-          console.log(error);
         }
       );
     }
@@ -197,7 +198,7 @@ const PersonalInfo = ({ user: { username, password, gender } }) => {
                       height="256px"
                       width="256px"
                       src={
-                        croppedImage || gender === "F"
+                        croppedImage ? croppedImage : gender === "F"
                           ? "assets/default/UserFemale256.png"
                           : "assets/default/UserMale256.png"
                       }
