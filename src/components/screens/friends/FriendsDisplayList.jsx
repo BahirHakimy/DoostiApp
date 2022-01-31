@@ -15,7 +15,7 @@ const FriendDisplayList = ({ username, onSelect, reRender, theme }) => {
   if (isPending || isIdle) {
     return (
       <div className="fullcenter">
-        <Spinner size="30px" />
+        <Spinner color={theme ==='light' ? "var(--dark)":"var(--gray)"} size="30px" />
       </div>
     );
   }
