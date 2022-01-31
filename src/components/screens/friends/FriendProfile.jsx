@@ -30,7 +30,7 @@ const FriendsProfile = ({
     isRejected,
   } = useAsync();
 
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [pendingState, setPendingState] = React.useState("none");
 
   React.useEffect(() => {
@@ -77,7 +77,7 @@ const FriendsProfile = ({
 
   function gotoMessage() {
     onMessageClick(username);
-    history.push("message");
+    navigate('/message');
     setTimeout(() => onMessageClick(null), 1500);
   }
 
