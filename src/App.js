@@ -4,16 +4,19 @@ import Authenticated from "./authenticatedApp";
 import UnAuthenticated from "./unAuthenticatedApp";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useUser } from "./components/common/hooks";
-import { ThemeProvider } from "./components/common/hooks";
+import { useUser, ThemeProvider } from "./components/common/hooks";
+import { isMobile } from "./services/utils";
+import MobilePage from "./components/screens/misc/mobilePage";
 
 function App() {
   const { isAuth } = useUser();
-
+  const isPhone = isMobile();
   return (
     <div className="App">
       <ToastContainer />
-      {isAuth ? (
+      {isPhone ? (
+        <MobilePage />
+      ) : isAuth ? (
         <ThemeProvider>
           <Authenticated />
         </ThemeProvider>

@@ -46,7 +46,7 @@ const Form = ({
         };
 
       default:
-        break;
+        throw new Error(`Unsupported type: ${action?.type}`);
     }
   }
 

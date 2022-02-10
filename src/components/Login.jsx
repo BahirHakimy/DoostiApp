@@ -47,6 +47,7 @@ const Login = () => {
     try {
       const { success } = await login(data);
       if (success) {
+        setPending(false);
         window.location.replace("/profile");
       }
     } catch (err) {

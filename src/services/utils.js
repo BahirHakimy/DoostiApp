@@ -143,5 +143,8 @@ const useSocket = (address) => {
     sendMessage,
   };
 };
+function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
 
-export { useAsync, useSocket, capitalize };
+export { useAsync, useSocket, capitalize, isMobile };

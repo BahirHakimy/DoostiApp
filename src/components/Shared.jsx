@@ -20,13 +20,7 @@ import {
 import { Form, FormInput, WrapperDiv } from "./lib";
 import { RiMessage3Line } from "react-icons/ri";
 import { FaUserFriends } from "react-icons/fa";
-import {
-  ProfileImage,
-  iconStyles,
-  MessageBlock,
-  ListItem,
-  AudioBlock,
-} from "./lib";
+import { ProfileImage, MessageBlock, ListItem, AudioBlock } from "./lib";
 import { logout } from "../services/authServices";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -282,10 +276,23 @@ const FriendCard = ({ profile, onClick, theme }) => {
 
 const Navbar = (props) => {
   const location = useLocation();
-  const path = location?.pathname.substr(1);
+  const path = location?.pathname.substring(1);
   const { isAuth, photo, dark } = props;
 
-  let newStyles = dark ? { ...iconStyles, color: "var(--light)" } : iconStyles;
+  const linkStyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "3.5rem",
+    height: "3.5rem",
+    margin: ".5rem 0",
+    color: dark ? "var(--light)" : "var(--dark)",
+    ":hover": {
+      background: "rgba(220,220,200,0.5)",
+      boxShadow: ".05rem 0 .5rem .05rem #333",
+      borderRadius: ".2rem",
+    },
+  };
   return isAuth ? (
     <nav
       css={{
@@ -303,39 +310,41 @@ const Navbar = (props) => {
           justifyContent: "flex-end",
         }}
       >
-        <Link to="profile">
+        <Link
+          to="profile"
+          css={linkStyle}
+          className={path === "profile" ? "navActive" : ""}
+          title="Profile"
+        >
           <ProfileImage
-            title="Profile"
-            alt="profile-icon"
+            alt=""
             src={photo || "assets/default/userMale128.png"}
-            className={path === "profile" ? "navActive" : ""}
           />
         </Link>
-        <Link to="/message">
-          <RiMessage3Line
-            title="Messages"
-            css={newStyles}
-            size="25px"
-            className={path === "message" ? "navActive" : ""}
-          />
+        <Link
+          to="/message"
+          css={linkStyle}
+          className={path === "message" ? "navActive" : ""}
+          title="Messages"
+        >
+          <RiMessage3Line size="25px" />
         </Link>
-        <Link to="/friends">
-          <FaUserFriends
-            title="Friends"
-            css={newStyles}
-            size="25px"
-            className={path === "friends" ? "navActive" : ""}
-          />
+        <Link
+          to="/friends"
+          css={linkStyle}
+          className={path === "friends" ? "navActive" : ""}
+          title="Friends"
+        >
+          <FaUserFriends size="25px" />
         </Link>
-        <Link to="/settings">
-          <AiOutlineSetting
-            title="Settings"
-            css={newStyles}
-            size="25px"
-            className={path === "settings" ? "navActive" : ""}
-          />
+        <Link
+          to="/settings"
+          css={linkStyle}
+          className={path === "settings" ? "navActive" : ""}
+          title="Settings"
+        >
+          <AiOutlineSetting size="25px" />
         </Link>
-        {/* <RiMoreLine title="Options" css={newStyles} size="25px" /> */}
       </div>
       <div
         css={{
@@ -347,17 +356,18 @@ const Navbar = (props) => {
           justifyContent: "flex-end",
         }}
       >
-        <AiOutlinePoweroff
+        <div
           title="Logout"
+          css={linkStyle}
           onClick={() => {
             const confirm = window.confirm(
               "You are about to logout, Are you sure?"
             );
             confirm && logout();
           }}
-          css={newStyles}
-          size="25px"
-        />
+        >
+          <AiOutlinePoweroff size="25px" />
+        </div>
       </div>
     </nav>
   ) : (
@@ -368,23 +378,24 @@ const Navbar = (props) => {
         justifyContent: "center",
         alignItems: "center",
         background: "linear-gradient(lightblue,blanchedalmond)",
+        width: "3.5rem",
       }}
     >
-      <Link to="/login">
-        <AiOutlineKey
-          title="Login"
-          css={iconStyles}
-          size="25px"
-          className={path === "login" ? "navActive" : ""}
-        />
+      <Link
+        to="/login"
+        css={linkStyle}
+        className={path === "login" ? "navActive" : ""}
+        title="Login"
+      >
+        <AiOutlineKey size="25px" />
       </Link>
-      <Link to="/register">
-        <AiOutlineUserAdd
-          title="Regitser"
-          css={iconStyles}
-          size="25px"
-          className={path === "register" ? "navActive" : ""}
-        />
+      <Link
+        to="/register"
+        css={linkStyle}
+        className={path === "register" ? "navActive" : ""}
+        title="Register"
+      >
+        <AiOutlineUserAdd size="25px" />
       </Link>
     </nav>
   );
