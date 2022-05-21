@@ -143,7 +143,7 @@ function MessageContainer({
             css={{
               textAlign: direction,
               fontWeight: "300",
-              userSelect: "none",
+              userSelect: "text",
             }}
           >
             {file ? (
