@@ -318,7 +318,7 @@ const Navbar = (props) => {
         >
           <ProfileImage
             alt=""
-            src={photo || "assets/default/userMale128.png"}
+            src={photo || "../assets/default/userMale128.png"}
           />
         </Link>
         <Link

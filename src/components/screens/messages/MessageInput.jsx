@@ -262,7 +262,7 @@ const MessageInput = ({
               position: "absolute",
               margin: "auto",
               paddingTop: ".3rem",
-              color: "var(--teal)",
+              color: theme === "dark" ? "var(--light)" : "var(--teal)",
             }}
           >
             {uploadState.progress}%
