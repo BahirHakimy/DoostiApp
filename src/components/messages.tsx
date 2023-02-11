@@ -1,15 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
-import "./styles/messages.css";
-import { FriendListItem, ErrorBox } from "./Shared";
-import { ListItem, Spinner } from "./lib";
-import { axios } from "../services/client";
-import ChatPanel from "./screens/messages/chatPanel";
-import ChatRooms from "./screens/messages/chatRooms";
-import { useTheme, useUser } from "./common/hooks";
-import { toast } from "react-toastify";
-import { useAsync } from "./../services/utils";
-import { capitalize } from "lodash";
+import React from 'react';
+import './styles/messages.css';
+import { FriendListItem, ErrorBox } from './Shared';
+import { ListItem, Spinner } from './lib';
+import { axios } from '../services/client';
+import ChatPanel from './screens/messages/chatPanel';
+import ChatRooms from './screens/messages/chatRooms';
+import { useTheme, useUser } from './common/hooks';
+import { toast } from 'react-toastify';
+import { useAsync } from '../services/utils';
+import { capitalize } from 'lodash';
 
 function Messages({ contact = null }) {
   const ACTION_TYPES = {
@@ -20,7 +20,7 @@ function Messages({ contact = null }) {
   const user = useUser();
   const { currentTheme } = useTheme();
   const [state, dispatch] = React.useReducer(stateReducer, {
-    chatType: contact && "PR",
+    chatType: contact && 'PR',
     friend: contact,
   });
   const { run, data, error, isIdle, isPending, isRejected, isSuccess } =
@@ -29,7 +29,7 @@ function Messages({ contact = null }) {
   React.useEffect(() => {
     run(
       axios.post(
-        "rooms/friends-and-recent/",
+        'rooms/friends-and-recent/',
         { username: user.username },
         { baseURL: process.env.REACT_APP_ASGI_URL }
       )
@@ -41,7 +41,7 @@ function Messages({ contact = null }) {
       case ACTION_TYPES.SET_ROOM:
         return {
           ...state,
-          chatType: "PB",
+          chatType: 'PB',
           room: action.roomName,
           friend: null,
           createRoom: action.create,
@@ -49,7 +49,7 @@ function Messages({ contact = null }) {
       case ACTION_TYPES.SET_USER:
         return {
           ...state,
-          chatType: "PR",
+          chatType: 'PR',
           friend: action?.friend,
           room: null,
           createRoom: false,
@@ -58,14 +58,14 @@ function Messages({ contact = null }) {
         return { chatType: null };
 
       default:
-        throw new Error("This should be impossible");
+        throw new Error('This should be impossible');
     }
   }
 
   function handleCreateRoom(room) {
     axios
       .post(
-        "rooms/create/",
+        'rooms/create/',
         { username: user.username, room },
         { baseURL: process.env.REACT_APP_ASGI_URL }
       )
@@ -102,7 +102,7 @@ function Messages({ contact = null }) {
       <div className={`fullcenter ${currentTheme}`}>
         <Spinner
           size="30px"
-          color={currentTheme === "light" ? "var(--dark)" : "var(--light)"}
+          color={currentTheme === 'light' ? 'var(--dark)' : 'var(--light)'}
         />
       </div>
     );
@@ -123,15 +123,15 @@ function Messages({ contact = null }) {
         <div id="sideList" className={`theme-sidelist${currentTheme}`}>
           <ul id="favorites">
             <ListItem border={true} aria-label="title">
-              <h4 css={{ color: "white" }}>
+              <h4 css={{ color: 'white' }}>
                 Friends <span>({friends.length})</span>
               </h4>
             </ListItem>
             <div
               aria-label="chats"
               css={{
-                maxHeight: "15rem",
-                overflowY: "scroll",
+                maxHeight: '15rem',
+                overflowY: 'scroll',
               }}
             >
               {friends.length > 0 ? (
@@ -151,7 +151,7 @@ function Messages({ contact = null }) {
           </ul>
           <ul id="recent">
             <ListItem border={true} aria-label="title">
-              <h4 css={{ color: "white" }}>
+              <h4 css={{ color: 'white' }}>
                 Recent chats <span>({recent_chats.length})</span>
               </h4>
             </ListItem>
@@ -159,7 +159,7 @@ function Messages({ contact = null }) {
               {recent_chats.length > 0 ? (
                 recent_chats.map((rc) => {
                   switch (rc.chat_type) {
-                    case "PB":
+                    case 'PB':
                       return (
                         <FriendListItem
                           key={rc.name}
@@ -170,7 +170,7 @@ function Messages({ contact = null }) {
                           onSelect={handleRoomSelect}
                         />
                       );
-                    case "PR":
+                    case 'PR':
                       return (
                         <FriendListItem
                           key={rc.username}
@@ -198,7 +198,7 @@ function Messages({ contact = null }) {
               goToRoom={handleRoomSelect}
               createRoom={handleCreateRoom}
             />
-          ) : chatType === "PB" ? (
+          ) : chatType === 'PB' ? (
             <ChatPanel
               theme={currentTheme}
               onClose={() => dispatch({ type: ACTION_TYPES.CLOSE })}
@@ -222,3 +222,4 @@ function Messages({ contact = null }) {
 }
 
 export { Messages };
+

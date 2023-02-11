@@ -1,9 +1,9 @@
-import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-import { Navbar } from "./components/Shared";
-import Login from "./components/Login";
-import PersonalInfo from "./components/PersonalInfo";
-import Register from "./components/Register";
+import React from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navbar } from './components/Shared';
+import Login from './components/Login';
+import PersonalInfo from './components/PersonalInfo';
+import Register from './components/Register';
 
 function UnAuthenticated() {
   const [user, setUser] = React.useState(null);
@@ -16,13 +16,13 @@ function UnAuthenticated() {
       <div
         id="mainPageContainer"
         style={{
-          background: "url(assets/backgrounds/bg1.jpg)",
-          display: "flex",
+          background: 'url(assets/backgrounds/bg1.jpg)',
+          display: 'flex',
         }}
       >
         <Navbar isAuth={false} />
         {!user && (
-          <img alt="logo" src={'../Logo512.png'} width="512px" height="512px"  />
+          <img alt="logo" src={'../Logo512.png'} width="512px" height="512px" />
         )}
 
         <Routes>
@@ -37,7 +37,7 @@ function UnAuthenticated() {
               )
             }
           />
-          <Route path="*" element={<Navigate to="/login"  />}  />
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </div>
     </div>
@@ -45,3 +45,4 @@ function UnAuthenticated() {
 }
 
 export default UnAuthenticated;
+

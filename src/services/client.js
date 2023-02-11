@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-const TokenKey = "AUTH_TOKEN";
+const TokenKey = 'AUTH_TOKEN';
 
 function getTokens() {
   const tokens = JSON.parse(localStorage.getItem(TokenKey));
@@ -11,15 +11,15 @@ function setTokens(data) {
   localStorage.setItem(TokenKey, JSON.stringify(data));
 }
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.defaults.baseURL = import.meta.REACT_APP_API_URL;
 
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: import.meta.REACT_APP_API_URL,
   timeout: 60000,
   headers: {
-    Authorization: "Bearer " + getTokens().access,
-    "Content-Type": "application/json",
-    accept: "application/json",
+    Authorization: 'Bearer ' + getTokens().access,
+    'Content-Type': 'application/json',
+    accept: 'application/json',
   },
 });
 
@@ -30,19 +30,19 @@ axiosInstance.interceptors.response.use(
     const originalRequest = error.config;
     if (
       error?.response?.status === 401 &&
-      error?.response?.statusText === "Unauthorized"
+      error?.response?.statusText === 'Unauthorized'
     ) {
       const { refresh: refresh_token } = getTokens();
       retryCount++;
       if (retryCount < 3) {
         return axiosInstance
-          .post("token/refresh/", { refresh: refresh_token })
+          .post('token/refresh/', { refresh: refresh_token })
           .then((response) => {
             setTokens(response.data);
-            axiosInstance.defaults.headers["Authorization"] =
-              "Bearer " + response.data.access;
-            originalRequest.headers["Authorization"] =
-              "Bearer " + response.data.access;
+            axiosInstance.defaults.headers['Authorization'] =
+              'Bearer ' + response.data.access;
+            originalRequest.headers['Authorization'] =
+              'Bearer ' + response.data.access;
 
             return axiosInstance(originalRequest);
           })
@@ -52,7 +52,7 @@ axiosInstance.interceptors.response.use(
       } else {
         return Promise.reject({
           response: {
-            message: "Authorization tokens has expired please reauthenticate",
+            message: 'Authorization tokens has expired please reauthenticate',
           },
         });
       }
@@ -68,3 +68,4 @@ export {
   axios as baseAxios,
   TokenKey,
 };
+

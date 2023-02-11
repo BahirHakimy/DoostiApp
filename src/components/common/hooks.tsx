@@ -1,5 +1,5 @@
-import React from "react";
-import { getCurrentUser } from "../../services/authServices";
+import React from 'react';
+import { getCurrentUser } from '../../services/authServices';
 
 const UserContext = React.createContext();
 
@@ -17,23 +17,23 @@ const UserProvider = (props) => {
 function useUser() {
   const data = React.useContext(UserContext);
   if (!data) {
-    throw new Error("useUser hook must be within a UserProvider component!");
+    throw new Error('useUser hook must be within a UserProvider component!');
   }
   return data;
 }
 
-const ThemeContext = React.createContext("dark");
+const ThemeContext = React.createContext('dark');
 
 const ThemeProvider = (props) => {
-  const setTheme = (color) => localStorage.setItem("theme", color);
+  const setTheme = (color) => localStorage.setItem('theme', color);
   const getTheme = React.useCallback(
     () =>
-      localStorage.getItem("theme") !== "undefined"
-        ? localStorage.getItem("theme")
+      localStorage.getItem('theme') !== 'undefined'
+        ? localStorage.getItem('theme')
         : null,
     []
   );
-  const [currentTheme, setCurrentTheme] = React.useState(getTheme() || "dark");
+  const [currentTheme, setCurrentTheme] = React.useState(getTheme() || 'dark');
 
   React.useEffect(() => {
     if (getTheme() !== currentTheme) {
@@ -51,7 +51,7 @@ const ThemeProvider = (props) => {
 function useTheme() {
   const context = React.useContext(ThemeContext);
   if (!context)
-    throw new Error("useTheme must be called within a ThemeProvider");
+    throw new Error('useTheme must be called within a ThemeProvider');
   return context;
 }
 
