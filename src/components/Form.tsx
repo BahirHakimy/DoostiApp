@@ -1,7 +1,7 @@
 /**@jsxImportSource @emotion/react */
-import React from "react";
-import { capitalize } from "lodash";
-import Joi from "joi-browser";
+import React from 'react';
+import { capitalize } from 'lodash';
+import Joi from 'joi-browser';
 import {
   Form as StyledForm,
   FormInput,
@@ -9,9 +9,9 @@ import {
   InputGroup,
   Button,
   Spinner,
-} from "./lib";
-import { AlertBox } from "./Shared";
-import { Link } from "react-router-dom";
+} from './lib';
+import { AlertBox } from './Shared';
+import { Link } from 'react-router-dom';
 
 const Form = ({
   structure,
@@ -32,14 +32,14 @@ const Form = ({
 
   function formReducer(state, action) {
     switch (action.type) {
-      case "INPUT_TYPED":
+      case 'INPUT_TYPED':
         return { ...state, data: { ...state.data, [action.id]: action.value } };
-      case "INPUT_ERROR":
+      case 'INPUT_ERROR':
         return {
           ...state,
           errors: { ...state.errors, [action.id]: action.value },
         };
-      case "FINAL_VALIDATION":
+      case 'FINAL_VALIDATION':
         return {
           ...state,
           errors: action.value,
@@ -56,12 +56,12 @@ const Form = ({
 
   function validateProperty(input) {
     const { error } = Joi.validate(input.value, schema[input.name]);
-    if (input.name === "confirm") {
+    if (input.name === 'confirm') {
       if (input.value === state.data?.password) {
-        error.message = "";
+        error.message = '';
       }
     }
-    dispatch({ type: "INPUT_ERROR", value: error?.message, id: input.name });
+    dispatch({ type: 'INPUT_ERROR', value: error?.message, id: input.name });
   }
 
   function validate(data, schemaOverride) {
@@ -81,7 +81,7 @@ const Form = ({
   function handleChange(event) {
     validateProperty(event.target);
     dispatch({
-      type: "INPUT_TYPED",
+      type: 'INPUT_TYPED',
       value: event.target.value,
       id: event.target.id,
     });
@@ -89,16 +89,16 @@ const Form = ({
 
   function renderInput(input) {
     return (
-      <InputGroup key={input.name} css={{ margin: ".5rem 0", height: "5rem" }}>
+      <InputGroup key={input.name} css={{ margin: '.5rem 0', height: '5rem' }}>
         <WrapperDiv>
-          <label htmlFor={input.name}>{input.icon ?? ""}</label>
+          <label htmlFor={input.name}>{input.icon ?? ''}</label>
           <FormInput
             onChange={handleChange}
             id={input.name}
             name={input.name}
-            type={input.type ?? "text"}
+            type={input.type ?? 'text'}
             placeholder={capitalize(input.name)}
-            value={state.data[input.name] || ""}
+            value={state.data[input.name] || ''}
             {...input?.props}
           />
         </WrapperDiv>
@@ -108,19 +108,19 @@ const Form = ({
   }
 
   const dropdownStyles = {
-    padding: ".5rem 2rem",
-    color: "#333",
-    outline: "none",
-    borderRadius: ".5rem",
-    background: "transparent",
-    width: "15rem",
+    padding: '.5rem 2rem',
+    color: '#333',
+    outline: 'none',
+    borderRadius: '.5rem',
+    background: 'transparent',
+    width: '15rem',
   };
 
   function renderDropdown(input) {
     return (
-      <InputGroup key={input.name} css={{ margin: ".5rem 0", height: "5rem" }}>
+      <InputGroup key={input.name} css={{ margin: '.5rem 0', height: '5rem' }}>
         <WrapperDiv>
-          <label htmlFor={input.name}>{input.icon ?? ""}</label>
+          <label htmlFor={input.name}>{input.icon ?? ''}</label>
           <select
             onChange={handleChange}
             css={dropdownStyles}
@@ -144,12 +144,12 @@ const Form = ({
     event.preventDefault();
     const errors = validate(state.data);
     if (errors) {
-      dispatch({ type: "FINAL_VALIDATION", value: errors });
+      dispatch({ type: 'FINAL_VALIDATION', value: errors });
     } else {
       onSubmit(state.data)
         .then((data) => data)
         .catch((err) => {
-          dispatch({ type: "FINAL_VALIDATION", value: err });
+          dispatch({ type: 'FINAL_VALIDATION', value: err });
           setPage(page - 1);
         });
     }
@@ -165,7 +165,7 @@ const Form = ({
 
     const errors = validate(newData, newSchema);
     if (errors) {
-      dispatch({ type: "FINAL_VALIDATION", value: errors });
+      dispatch({ type: 'FINAL_VALIDATION', value: errors });
     } else {
       setPage(page + 1);
     }
@@ -175,19 +175,26 @@ const Form = ({
 
   return (
     <StyledForm onSubmit={handleSubmit} css={styling}>
-      <h3 css={{ color: "white" }}>
+      <h3
+        css={{
+          color: 'white',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         {meta.title} {meta.icon}
       </h3>
       {paginate(structure, 3, page).map((st) => {
-        return st.type === "dropdown" ? renderDropdown(st) : renderInput(st);
+        return st.type === 'dropdown' ? renderDropdown(st) : renderInput(st);
       })}
       <AlertBox error={submitError} />
       <div
         css={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
         {fieldPerPage ? (
@@ -203,7 +210,7 @@ const Form = ({
               {pending ? (
                 <Spinner
                   size="24px"
-                  css={{ margin: "1.2rem 0 0 .5rem", padding: ".1rem 0" }}
+                  css={{ margin: '1.2rem 0 0 .5rem', padding: '.1rem 0' }}
                 />
               ) : (
                 <Button type="submit">Submit</Button>
@@ -215,7 +222,7 @@ const Form = ({
             {pending ? (
               <Spinner
                 size="24px"
-                css={{ margin: "1.2rem 0 0 .5rem", padding: ".1rem 0" }}
+                css={{ margin: '1.2rem 0 0 .5rem', padding: '.1rem 0' }}
               />
             ) : (
               <Button type="submit">Submit</Button>
@@ -223,20 +230,20 @@ const Form = ({
           </>
         )}
       </div>
-      <p css={{ fontSize: "0.8rem", color: "white" }}>
+      <p css={{ fontSize: '0.8rem', color: 'white' }}>
         {footer.caption}
         <Link
           css={{
-            ":link": {
-              color: "red",
+            ':link': {
+              color: 'red',
             },
-            ":visited": {
-              color: "red",
+            ':visited': {
+              color: 'red',
             },
           }}
           to={`/${footer.to}`}
         >
-          {" "}
+          {' '}
           {capitalize(footer.to)}
         </Link>
       </p>
@@ -245,3 +252,4 @@ const Form = ({
 };
 
 export default Form;
+

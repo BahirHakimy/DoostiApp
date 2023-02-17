@@ -4,6 +4,7 @@ import { Navbar } from './components/Shared';
 import Login from './components/Login';
 import PersonalInfo from './components/PersonalInfo';
 import Register from './components/Register';
+import Tabs from './components/tabs/Tabs';
 
 function UnAuthenticated() {
   const [user, setUser] = React.useState(null);
@@ -16,15 +17,19 @@ function UnAuthenticated() {
       <div
         id="mainPageContainer"
         style={{
-          background: 'url(assets/backgrounds/bg1.jpg)',
           display: 'flex',
+          backdropFilter: 'blur(5px)',
         }}
       >
         <Navbar isAuth={false} />
         {!user && (
-          <img alt="logo" src={'../Logo512.png'} width="512px" height="512px" />
+          <img
+            alt="logo"
+            src={'./assets/logo/logo-512.png'}
+            width="512px"
+            height="512px"
+          />
         )}
-
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route
